@@ -1,7 +1,7 @@
 import { UserCards } from "@/src/components/UserCards";
 import CountChart from "@/src/components/CountChart";
 import AttandenceChart from "@/src/components/AttandenceChart";
-import React from "react";
+import FinanceChart from "@/src/components/FinanceChart";
 
 const AdminPage = () => {
   return (
@@ -24,6 +24,10 @@ const AdminPage = () => {
           <div className="w-full lg:w-2/3 h-112.5 ">
             <AttandenceChart />
           </div>
+        </div>
+        {/* Finance Chart */}
+        <div>
+          <FinanceChart />
         </div>
       </div>
       <div className="bg-green-300 w-full lg:w-1/3">right</div>
