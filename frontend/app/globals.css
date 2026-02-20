@@ -1,2 +1,14 @@
 @import "tailwindcss";
 
+
+/* Custom Theam for the Dashboard */
+
+@theme{
+    --color-sky: #C3EBFA;
+    --color-skyLight: #EDF9FD;
+    --color-purple: #CFCEFF;
+    --color-purpleLight: #F1F0FF;
+    --color-yellow: #FAE27C;
+    --color-yellowLight: #FEFCE8;
+}
+
