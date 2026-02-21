@@ -4,6 +4,7 @@ import AttandenceChart from "@/src/components/AttandenceChart";
 import FinanceChart from "@/src/components/FinanceChart";
 import EventCalander from "@/src/components/EventCalander";
 import 'react-calendar/dist/Calendar.css';
+import Announcements from "@/src/components/Announcements";
 
 const AdminPage = () => {
   return (
@@ -34,6 +35,7 @@ const AdminPage = () => {
       </div>
       <div className=" w-full lg:w-1/3 flex flex-col gap-4 ">
       <EventCalander />
+      <Announcements />
       </div>
     </div>
   );
