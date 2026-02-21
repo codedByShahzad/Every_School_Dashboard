@@ -2,6 +2,8 @@ import { UserCards } from "@/src/components/UserCards";
 import CountChart from "@/src/components/CountChart";
 import AttandenceChart from "@/src/components/AttandenceChart";
 import FinanceChart from "@/src/components/FinanceChart";
+import EventCalander from "@/src/components/EventCalander";
+import 'react-calendar/dist/Calendar.css';
 
 const AdminPage = () => {
   return (
@@ -30,7 +32,9 @@ const AdminPage = () => {
           <FinanceChart />
         </div>
       </div>
-      <div className="bg-green-300 w-full lg:w-1/3">right</div>
+      <div className=" w-full lg:w-1/3 flex flex-col gap-4 ">
+      <EventCalander />
+      </div>
     </div>
   );
 };
