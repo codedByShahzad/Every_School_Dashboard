@@ -1,4 +1,5 @@
 import Pagination from '@/src/components/Pagination'
+import Table from '@/src/components/Table'
 import TableSearch from '@/src/components/TableSearch'
 import React from 'react'
 
@@ -11,7 +12,9 @@ const page = () => {
         <TableSearch />
       </div>
       {/* List  */}
-      <div></div>
+      <div>
+        <Table />
+      </div>
       {/* Pagination */}
         <Pagination />
     </div>
