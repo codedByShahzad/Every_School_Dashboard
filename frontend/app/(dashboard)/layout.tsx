@@ -18,7 +18,7 @@ export default function DashboardLayout({
             </Link>
             <Menu />
         </div>
-        <div className=" w-full bg-[#F7F8FA] overflow-scroll">
+        <div className=" w-full bg-[#F7F8FA] overflow-scroll flex flex-col">
             <Navbar />
             {children}
         </div>

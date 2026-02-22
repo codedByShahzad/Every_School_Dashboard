@@ -4,7 +4,7 @@ import React from 'react'
 const Navbar = () => {
   return (
     <div className='flex items-center justify-between p-4'>
-      <div className='hidden md:flex items-center gap-2 px-2 ring-[1.5px] ring-gray-300 rounded-full' >
+      <div className='hidden md:flex items-center gap-2 px-2 ring-[1.5px] text-xs ring-gray-300 rounded-full' >
           <Image src="/images/search.png" alt='' width={14} height={14} /> 
           <input type="text" placeholder='Search...' className='w-50 bg-transparent outline-none p-2 ' />
       </div>
