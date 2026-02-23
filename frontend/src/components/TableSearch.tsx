@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { role } from "../lib/data";
 
 const TableSearch = () => {
   return (
@@ -19,9 +20,9 @@ const TableSearch = () => {
         <button className="w-8 h-8 flex items-center justify-center rounded-full bg-yellow">
           <Image src="/images/sort.png" alt="" width={14} height={14} />
         </button>
-        <button className="w-8 h-8 flex items-center justify-center rounded-full bg-yellow">
+        {role === "admin" && <button className="w-8 h-8 flex items-center justify-center rounded-full bg-yellow">
           <Image src="/images/plus.png" alt="" width={14} height={14} />
-        </button>
+        </button>}
         
       </div>
     </div>
