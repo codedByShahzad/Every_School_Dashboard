@@ -1,9 +1,33 @@
-import React from 'react'
+import React from "react";
 
-const Table = () => {
+type Column = {
+  header: string;
+  accessor: string;
+  className?: string;
+};
+
+type TableProps = {
+  columns: Column[];
+  data: any[];
+  renderRow: (item: any) => React.ReactNode;
+};
+
+const Table = ({ columns, data, renderRow }: TableProps) => {
   return (
-    <div>Table</div>
-  )
-}
+    <table className="w-full mt-4">
+      <thead>
+        <tr className="text-left text-gray-500 text-sm">
+          {columns.map((col, index) => (
+            <th key={index} className={col.className}>
+              {col.header}
+            </th>
+          ))}
+        </tr>
+      </thead>
 
-export default Table
+      <tbody>{data.map((item)=> renderRow(item))}</tbody>
+    </table>
+  );
+};
+
+export default Table;
