@@ -4,16 +4,18 @@ import TableSearch from '@/src/components/TableSearch'
 import Image from 'next/image'
 import React from 'react'
 import  Link  from 'next/link';
-import { parentsData, role, studentsData, teachersData } from '@/src/lib/data'
+import { assignmentsData, classesData, examsData, lessonsData, parentsData, resultsData, role, studentsData, subjectsData, teachersData } from '@/src/lib/data'
 
 
-type Parent = {
+type Result = {
   id: number;
-  name: string;
-  email: string;
-  students?: string[];
-  phone: string;
-  address: string;
+  subject: string;
+  class: string;
+  teacher: string;
+  student: string;
+  type: "exam" | "assignment";
+  date: string;
+  score: number
 };
 
 
@@ -22,23 +24,32 @@ const page = () => {
 
 const columns = [
   {
-    header: "Info",
-    accessor: "info",
+    header: "Subject Name",
+    accessor: "name",
   },
   {
-    header: "Student Name",
-    accessor: "Students",
+    header: "Student",
+    accessor: "student",
     className: "hidden md:table-cell",
   },
   {
-    header: "Phone",
-    accessor: "phone",
-    className: "hidden lg:table-cell",
+    header: "Score",
+    accessor: "score",
   },
   {
-    header: "Address",
-    accessor: "address",
-    className: "hidden lg:table-cell",
+    header: "Teacher",
+    accessor: "teacher",
+    className: "hidden md:table-cell",
+  },
+  {
+    header: "Class",
+    accessor: "class",
+    className: "hidden md:table-cell",
+  },
+  {
+    header: "Date",
+    accessor: "date",
+    className: "hidden md:table-cell",
   },
   {
     header: "Actions",
@@ -46,17 +57,17 @@ const columns = [
   },
 ];
 
-  const renderRow = (item: Parent) =>(
+  const renderRow = (item: Result) =>(
     <tr key={item.id} className='border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-purpleLight'>
       <td className='flex items-center gap-4 p-4'>
-        <div className="flex flex-col">
-          <h3 className="font-semibold">{item.name}</h3>
-          <p className="text-xs text-gray-500">{item?.email}</p>
-        </div>
+        {item.subject}
       </td>
-      <td className="hidden md:table-cell">{item.students?.join(", ")}</td>
-      <td className="hidden md:table-cell">{item.phone}</td>
-      <td className="hidden lg:table-cell">{item.address}</td>
+
+      <td >{item.student}</td>
+      <td className='hidden md:table-cell'>{item.score}</td>
+      <td className='hidden md:table-cell'>{item.teacher}</td>
+      <td className='hidden md:table-cell'>{item.class}</td>
+      <td className='hidden md:table-cell'>{item.date}</td>
 
       <td>
         <div className="flex items-center gap-2">
@@ -79,12 +90,12 @@ const columns = [
     <div className='bg-white rounded-2xl flex-1 m-4 mt-0 p-4'>
       {/* Top */}
       <div className='flex justify-between items-center'>
-        <h1 className='hidden md:block text-lg font-semibold'>All Parents</h1>
+        <h1 className='hidden md:block text-lg font-semibold'>All Results</h1>
         <TableSearch />
       </div>
       {/* List  */}
       <div>
-        <Table columns= {columns} renderRow = {renderRow} data={parentsData} />
+        <Table columns= {columns} renderRow = {renderRow} data={resultsData} />
       </div>
       {/* Pagination */}
         <Pagination />
