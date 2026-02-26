@@ -52,7 +52,7 @@ const page = () => {
       <td>
         <div className="flex items-center gap-2">
             {role === "admin" && <FormModal table='announcement' type="update" data={item} />}
-            {role === "admin" && <FormModal table='announcement' type="delete" />}
+            {role === "admin" && <FormModal table='announcement' type="delete" id={item.id}  />}
         </div>
       </td>
     </tr>

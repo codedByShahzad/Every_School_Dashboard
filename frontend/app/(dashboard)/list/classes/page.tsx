@@ -59,7 +59,7 @@ const columns = [
         <div className="flex items-center gap-2">
           
             {role === "admin" && <FormModal table='class' type="update"  data={item}  />}
-            {role === "admin" && <FormModal table='class' type="delete" />}
+            {role === "admin" && <FormModal table='class' type="delete" id={item.id}  />}
         </div>
       </td>
     </tr>

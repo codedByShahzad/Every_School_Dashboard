@@ -87,7 +87,7 @@ const page = () => {
               <Image src="/images/view.png" alt="" width={16} height={16} />
             </button>
           </Link>
-         {role === "admin" && <FormModal table="student" type="delete" />}
+         {role === "admin" && <FormModal table="student" type="delete" id={item.id} />}
         </div>
       </td>
     </tr>
