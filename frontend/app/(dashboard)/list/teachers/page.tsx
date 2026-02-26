@@ -5,6 +5,7 @@ import Image from 'next/image'
 import React from 'react'
 import  Link  from 'next/link';
 import { role, teachersData } from '@/src/lib/data'
+import FormModal from '@/src/components/FormModal'
 
 
 type Teacher = {
@@ -81,11 +82,12 @@ const columns = [
               <Image src="/images/view.png" alt="" width={16} height={16}  />
             </button>
           </Link>
-          {role === "admin" && (
-             <button className="w-7 h-7 flex items-center justify-center rounded-full cursor-pointer bg-purple">
-              <Image src="/images/delete.png" alt="" width={16} height={16}  />
-            </button>
-          )}
+          {role === "admin" && 
+        // <button className="w-8 h-8 flex items-center justify-center rounded-full bg-yellow">
+        //   {/* <Image src="/images/plus.png" alt="" width={14} height={14} /> */}
+        // </button>
+          <FormModal table='teacher' type="delete" id={item.id} />
+        }
         </div>
       </td>
     </tr>
@@ -96,7 +98,31 @@ const columns = [
       {/* Top */}
       <div className='flex justify-between items-center'>
         <h1 className='hidden md:block text-lg font-semibold'>All Teachers</h1>
-        <TableSearch />
+        <div className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto">
+      <div className="w-full md:w-auto  flex items-center gap-2 px-2 text-xs ring-[1.5px] ring-gray-300 rounded-full">
+        <Image src="/images/search.png" alt="" width={14} height={14} />
+        <input
+          type="text"
+          placeholder="Search..."
+          className="w-50 bg-transparent outline-none p-2 "
+        />
+      </div>
+      <div className="flex items-center gap-4 self-end">
+        <button className="w-8 h-8 flex items-center justify-center rounded-full bg-yellow">
+          <Image src="/images/filter.png" alt="" width={14} height={14} />
+        </button>
+        <button className="w-8 h-8 flex items-center justify-center rounded-full bg-yellow">
+          <Image src="/images/sort.png" alt="" width={14} height={14} />
+        </button>
+        {role === "admin" && 
+        // <button className="w-8 h-8 flex items-center justify-center rounded-full bg-yellow">
+        //   {/* <Image src="/images/plus.png" alt="" width={14} height={14} /> */}
+        // </button>
+          <FormModal table='teacher' type="create" />
+        }
+        
+      </div>
+    </div>
       </div>
       {/* List  */}
       <div>
