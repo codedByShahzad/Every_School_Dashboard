@@ -1,9 +1,6 @@
 import Pagination from "@/src/components/Pagination";
 import Table from "@/src/components/Table";
-import TableSearch from "@/src/components/TableSearch";
 import Image from "next/image";
-import React from "react";
-import Link from "next/link";
 import {
   eventsData,
   role,
