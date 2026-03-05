@@ -93,7 +93,7 @@ const page = () => {
           </div>
         </div>
       </div>
-      {/* List  */}
+     
       <div>
         <Table columns={columns} renderRow={renderRow} data={eventsData} />
       </div>
